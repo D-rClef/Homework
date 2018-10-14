@@ -30,14 +30,19 @@ float avg (float a, float b, float c)
 
 float med (float a, float b, float c)
 {
-    if ((a > min(a,b,c)) & (a < max(a,b,c)))
+    if ((a == b) || (a == c)) {return a;}
+    else
+    {
+       if ((a > min(a,b,c)) & (a < max(a,b,c)))
       {return a;}
     else
     {
         if ((b > min(a,b,c)) & (b < max(a,b,c)))
           {return b;}
-        else {return c;};
+        else {return c;}
     };
+    };
+
 }
 
 void swap (float* a, float* b, float* c)
