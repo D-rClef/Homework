@@ -30,7 +30,7 @@ int main()
             cout<<"Composite";
         }
         else
-            cout<<"Prime";
+            {cout<<"Prime";};
     };
 
     return 0;
