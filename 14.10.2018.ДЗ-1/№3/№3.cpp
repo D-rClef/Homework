@@ -12,7 +12,7 @@ int main()
     int a = 1;
     int S = 0;
     int k = 0;
-    int z;
+    double z;
 
     while (a != 0)
     {
