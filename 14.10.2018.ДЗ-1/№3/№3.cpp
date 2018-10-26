@@ -9,22 +9,21 @@ using namespace std;
 
 int main()
 {
-    int a = 1;
-    int S = 0;
-    int k = 0;
+    double a = 1;
+    double S = 0;
+    double k = 0;
     double z;
 
     while (a != 0)
     {
         cin>>a;
         S += a;
-        k += 1;
-   //     if (a == 0) 
-   //         {break;}; 
+        k ++;
     };
-   
+
     z = (S/k);
     cout<<z;
 
     return 0;
 }
+
