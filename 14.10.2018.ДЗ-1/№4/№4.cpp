@@ -9,7 +9,7 @@ int main()
 {
     int n;
     cin>>n;
-    int Tuturu[n];
+    int* Tuturu = new int [n];
     int i;
     int S = 0;
 
