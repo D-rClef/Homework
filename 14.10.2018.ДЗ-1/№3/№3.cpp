@@ -19,8 +19,8 @@ int main()
         cin>>a;
         S += a;
         k += 1;
-        if (a == 0) 
-            {break;};
+   //     if (a == 0) 
+   //         {break;}; 
     };
    
     z = (S/k);
