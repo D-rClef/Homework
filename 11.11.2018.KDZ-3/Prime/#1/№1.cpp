@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int n, k, s = 0;
+    long long n, k, s = 0;
 
     cin >> n;
     k = n % 10;
