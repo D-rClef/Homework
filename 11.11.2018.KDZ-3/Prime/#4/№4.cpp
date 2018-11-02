@@ -6,7 +6,7 @@ bool prost(int a)
 	int k = 0;
 	if (a == 1)
 	{
-		return 0;
+		return (0 == 1);
 	}
 	else
 	{
@@ -14,14 +14,14 @@ bool prost(int a)
 		{
 			if ((a % i) == 0)
 			{
-				return 0;
+				return (0 == 1);
 				break;
 				k += 1;
 			};
 		};
 		if (k == 0)
 		{
-			return 1;
+			return (1 == 1);
 		};
 	};
 }
@@ -40,6 +40,6 @@ int main()
 			p += *(zver + i);
 		};
 	};
-
+	cout << '\n';
 	cout << p;
 }
