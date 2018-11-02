@@ -3,7 +3,7 @@ using namespace std;
 
 long long C(int a, int b)
 {
-	if ((b < 1) || (a == b))
+	if ((b == 0) || (a == b))
 	{
 		return 1;
 	}
