@@ -9,20 +9,23 @@ int main()
 
 	for (int i = 0; i < n; i++)
 	{
-		int k = 0;
 		cin >> *(qwa + i);
-
+	};
+	cout << '\n';
+	for (int i = 0; i < n; i++)
+	{
+		int k = 0;
 		int q = *(qwa + i);
-		for (int j = 1; j <= *(qwa + i); j++)
+		for (int j = 1; j <= q; j++)
 		{
-			if  ((q % j) == 0)
+			if ((q % j) == 0)
 			{
 				k += 1;
 			};
 		};
 		if (k >= 5)
 		{
-			cout << *(qwa + i) << " ";
+			cout << q << " ";
 		};
 	};
 }
