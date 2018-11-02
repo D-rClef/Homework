@@ -4,10 +4,10 @@ using namespace std;
 double sqrt(double a)
 {
 	double k;
-	double c = 0.00001;
+	double c = 0.000001;
 	for (double i = 0; 0 == 0; i += c)
 	{
-		if ((i * i <= a) && ((i + c) * (i + c) >= a))
+		if (((i * i) <= a) && (((i + c) * (i + c)) >= a))
 		{
 			k = i;
 			break;
@@ -33,7 +33,7 @@ double sqrt(double a)
 double cbt(double a)
 {
 	double k;
-	double c = 0.00001;
+	double c = 0.000001;
 	for (double i = 0; 0 == 0; i += c)
 	{
 		if ((i * i * i <= a) && ((i + c) * (i + c) * (i + c) >= a))
@@ -61,7 +61,7 @@ double cbt(double a)
 
 int main()
 {
-	int f;
+	long long f;
 	cin >> f;
 	cout << sqrt(f) << '\n';
 	cout << cbt(f) << '\n';
