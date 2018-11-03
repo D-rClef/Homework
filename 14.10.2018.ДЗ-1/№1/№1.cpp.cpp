@@ -2,36 +2,32 @@
 программе гарантируется, что число - натуральное.*/
 
 #include <iostream>
+#include <cmath>
 
 
 using namespace std;
 
 int main()
 {
-    int n;
-    int k = 0;
-    int i;
-    cin>>n;
+    double G, m, d_c, R, L, d, T, T1, p = 3.141592653589793238462643383279502884;
+    cin >> m >> d_c >> R >> L >> d >> T >> T1;
+    m /= 1000;
+    d /= 2000;
+    d_c /= 2000;
+    R /= 1000;
+    T /= 1000;
+    T1 /= 1000;
+    L /= 1000;
 
-    if (n == 1)
-    {
-        cout<<"Unit";
-    }
-    else
-    {
-        for (int i = 2; i < n; i++ )
-            if ((n % i)==0)
-            {
-                k = 1;
-                break;
-            };
-        if (k==1)
-        {
-            cout<<"Composite";
-        }
-        else
-            cout<<"Prime";
-    };
+    d_c = pow(d_c, 2);
+    R = pow(R, 2);
+    R *= 2;
+    d = pow(d, 4);
+    T = pow(T, 2);
+    T1 = pow(T1, 2);
+
+    G = ((8*p*L*m*(d_c+R))/(d*(T1-T)));
+    cout << G;
 
     return 0;
 }
