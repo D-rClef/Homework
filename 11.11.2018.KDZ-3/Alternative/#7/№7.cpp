@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 
 using namespace std;
 
@@ -30,85 +30,73 @@ int prost(int l)
 }
 
 
-void NTI(int** OMG, int x, int y)
+void NTI(int** &a, int b, int c)
 {
-    int k = x*y;
-    k -= 1;
-    x -= 1;
-    y -= 1;
-
-    int q = 0;
-    int* B = new int [k];
-
-    while (q <= k);
+    int q = (b*c), l = 0;
+    int* sost = new int [q];
+    while (l < q)
     {
         for (int j = 4; 0 == 0; j++)
         {
             if (prost(j) == 0)
             {
-                B[q] = j;
-                q += 1;
+                sost[l] = j;
+                l++;
+                if (l == q) break;
             };
         };
     };
+    l = 0;
 
-     q = 0;
+    b--, c--;
+	int d = 0, e = c;
+	int f = b, g = 0;
+	int x = d, y = f;
+	while ((d <= e) || (f >= g))
+	{
+	    if (d < e) {x = d;};
+		if (f > g) {y = f;};
 
-     int w = x;
-     int d = 0;
+		while (y > g)
+		{
+		    if (f <= g) break;
+			a[y][x] = sost[l];
+			l += 1;
+			y -= 1;
+		};
 
-     int r = 0;
-     int g = y;
+		while (x < e)
+		{
+		    if (d >= e) break;
+			a[y][x] = sost[l];
+			l += 1;
+			x += 1;
+		};
 
-     while (q <= k)
-     {
-         int e = d;
-         int t = g;
+		while (y < f)
+		{
+		    if (f <= g) break;
+			a[y][x] = sost[l];
+			l += 1;
+			y += 1;
+		};
 
-         while (w > e)
-         {
-             OMG[w][r] = B[q];
-             w -= 1;
-             q += 1;
-         };
+		while (x > d)
+		{
+		    if (d >= e) break;
+			a[y][x] = sost[l];
+			l += 1;
+			x -= 1;
+		};
 
-         q += 1;
-         w -= 1;
+		d++, e--, f--, g++;
 
-         while (r < t)
-         {
-             OMG[w][r] = B[q];
-             r += 1;
-             q += 1;
-         };
-
-         q += 1;
-         r += 1;
-         e = x;
-         t = 0;
-
-         while (w < e)
-         {
-             OMG[w][r] = B[q];
-             w += 1;
-             q += 1;
-         };
-
-         w += 1;
-         q += 1;
-
-         while (r > t)
-         {
-             OMG[w][r] = B[q];
-             r -= 1;
-             q += 1;
-         };
-
-         q += 1;
-         w -= 1;
-         d += 1;
-         g -= 1;
-     };
+	};
+	b++, c++;
+	if (((b % 2) != 0) && ((c % 2) != 0))
+    {
+        a [(b - 1)/2] [(c - 1)/2] = sost[q - 2];
+    };
 }
 
 
@@ -117,10 +105,8 @@ void NTI(int** OMG, int x, int y)
 int main()
 {
     int m, n;
-    cin >> m >> n;
-
-    m -= 1;
-    n -= 1;
+    scanf("%d", &m);
+    scanf("%d", &n);
 
     int** F = new int* [m];
     for(int z = 0; z < m; z++)
@@ -128,15 +114,20 @@ int main()
         F[z] = new int [n];
     };
 
-    m += 1;
-    n += 1;
+    int w = 3;
+	if ((m*n) >= 10)
+    {
+        w += 2;
+    };
+
     NTI(F, m, n);
 
-    for(int z = 0; z < m; z++)
+    for(int i = 0; i < m; i++)
     {
-        for(int c = 0; c < n; c++)
+        for(int j = 0; j < n; j++)
         {
-            cout << F[z][c] << " ";
+            printf("%*d", w, F [i][j]);
         };
+        printf("\n");
     };
 }

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int pal (char* A, int b)
+bool pal (char* A, int b)
 {
     b -= 1;
     int k = 0;
@@ -16,16 +16,23 @@ int pal (char* A, int b)
     return (k == 0);;
 }
 
+int Length(char* a)
+{
+    int b = 0;
+    while(*a++)
+    {
+        b++;
+    };
+    return b;
+}
+
 int main()
 {
     int n;
-    cin >> n;
-    char* Hmm = new char [n];
 
-    for (int i = 0; i < n; i++)
-    {
-        cin >> Hmm[i];
-    };
+    char* Hmm = new char [256];
+    cin.getline(Hmm, 256, '\n');
+    n = Length(Hmm);
 
     cout << '\n';
 

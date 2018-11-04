@@ -28,23 +28,18 @@ bool prost(int a)
 
 int main()
 {
-	int n;
+	long long n;
 	cin >> n;
 
-	if ((prost(n) == prost(2)) || (n == 1))
-	{
-		cout << "Invalid definition";
-	}
-	else
-	{
-		for (int i = n; i >= 2; i--)
-		{
-			if (((n % i) == 0) && (prost(i) == prost(2)))
-			{
-				n = i;
-				break;
-			};
-		};
-		cout << n;
-	};
+
+    for (int i = n; i >= 2; i--)
+    {
+        if (((n % i) == 0) && (prost(i) == prost(2)))
+        {
+            n = i;
+            break;
+        };
+    };
+    cout << n;
+
 }
