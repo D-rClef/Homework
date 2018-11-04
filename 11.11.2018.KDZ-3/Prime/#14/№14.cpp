@@ -16,6 +16,16 @@ int pamyat(char* a, int b)
     return p;
 }
 
+int Length(char* a)
+{
+    int b = 0;
+    while(*a++)
+    {
+        b++;
+    };
+    return b;
+}
+
 void antizip (char* &a, int b)
 {
     int r = pamyat(a, b);
@@ -39,12 +49,9 @@ void antizip (char* &a, int b)
 int main()
 {
    int n;
-   cin >> n;
-   char* shifr = new char [n];
-   for (int i = 0; i < n; i++)
-   {
-       cin >> *(shifr + i);
-   };
+   char* shifr = new char [256];
+   cin.getline(shifr, 256, '\n');
+   n = Length(shifr);
 
    int w = pamyat(shifr, n);
    antizip(shifr, n);
