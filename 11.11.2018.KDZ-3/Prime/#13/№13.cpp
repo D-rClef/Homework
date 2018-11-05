@@ -9,7 +9,7 @@ int variable (char* a, int b)
     {
         if ((*(a+i)) != (*(a+i+1)))
         {
-            k += 1;
+            k++;
         };
     };
     return k;
@@ -38,8 +38,8 @@ void zip (char* &a, int b)
         int j = i;
         while ((*(a+i)) == (*(a+j)))
         {
-            v += 1;
-            j += 1;
+            v++;
+            j++;
         };
 
         *(plagiat + z + 1) = *(a+i);

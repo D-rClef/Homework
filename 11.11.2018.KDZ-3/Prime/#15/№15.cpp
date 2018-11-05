@@ -4,7 +4,7 @@ using namespace std;
 
 void diag (int** &a, int b)
 {
-	b -= 1;
+	b--;
 
 	int c = b, d = 0, k = 1;
 	while (c >= d)
@@ -14,33 +14,28 @@ void diag (int** &a, int b)
 		while (x < c)
 		{
 			a[y][x] = k;
-			k += 1;
-			x += 1;
+			k++, x++;
 		};
 
 		while (y < c)
 		{
 			a[y][x] = k;
-			k -= 1;
-			y += 1;
+			k--, y++;
 		};
 
 		while (x > d)
 		{
 			a[y][x] = k;
-			k += 1;
-			x -= 1;
+			k++, x--;
 		};
 
 		while (y > d)
 		{
 			a[y][x] = k;
-			k -= 1;
-			y -= 1;
+			k--, y--;
 		};
 
-		d += 1;
-		c -= 1;
+		d++, c--;
 		k += 2;
 	};
 

@@ -8,7 +8,7 @@ int chet(int* a, int b)
     {
         if (((*(a + i)) % 2) == 0)
         {
-            m += 1;
+            m++;
         };
     };
     return m;
@@ -25,7 +25,7 @@ void zachto(int* &c, int d)
         if (((*(c + i)) % 2) != 0)
         {
             *(plagiat + k) = *(c + i);
-            k += 1;
+            k++;
         };
     };
 
@@ -36,7 +36,7 @@ int main()
 {
     int n;
     cin >> n;
-    int*capital = new int[n];
+    int* capital = new int[n];
     for (int i = 0; i < n; i++)
     {
        cin >> *(capital + i);

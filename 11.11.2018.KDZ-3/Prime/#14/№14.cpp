@@ -38,8 +38,7 @@ void antizip (char* &a, int b)
         while (q != 0)
         {
             *(plagiat + z) = *(a + i + 1);
-            q -= 1;
-            z += 1;
+            q--, z++;
         };
     };
 

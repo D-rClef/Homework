@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <cmath>
 
 using namespace std;
 
@@ -52,10 +53,25 @@ void NTI(int** &a, int b, int c)
 	int d = 0, e = c;
 	int f = b, g = 0;
 	int x = d, y = f;
-	while ((d <= e) || (f >= g))
+
+	bool usl;
+	double B = b, C = c;
+	B = (B/C);
+	if (B < 1) {B = (C/B);};
+	B = round(B);
+	if (B >= 2)
+    {
+        usl = ((d <= e) && (f >= g));
+    }
+    else
+    {
+        usl = ((d <= e) || (f >= g));
+    };
+
+	while (usl)
 	{
-	    if (d < e) {x = d;};
-		if (f > g) {y = f;};
+	    x = d;
+		y = f;
 
 		while (y > g)
 		{
@@ -90,8 +106,17 @@ void NTI(int** &a, int b, int c)
 		};
 
 		d++, e--, f--, g++;
+		if (B >= 2)
+        {
+            usl = ((d <= e) && (f >= g));
+        }
+        else
+        {
+            usl = ((d <= e) || (f >= g));
+        };
 
 	};
+
 	b++, c++;
 	if (((b % 2) != 0) && ((c % 2) != 0))
     {

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -69,7 +70,7 @@ void uhodi (char* &a, int b)
 
 int main()
 {
-    int n;
+    /*int n;
 
     char* probel_zalipaet = new char [256];
     cin.getline(probel_zalipaet, 256, '\n');
@@ -90,5 +91,8 @@ int main()
             cout << " ";
         };
     };
-
+*/
+cout << "Haha" << '\n';
+cout << "Arrr";
+cout << '\v' << '\r' << "Lol";
 }

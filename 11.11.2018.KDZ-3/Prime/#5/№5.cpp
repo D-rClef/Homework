@@ -16,7 +16,7 @@ bool prost(int a)
 			{
 				return 0;
 				break;
-				k += 1;
+				k++;
 			};
 		};
 		if (k == 0)

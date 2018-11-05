@@ -4,7 +4,7 @@ using namespace std;
 
 void pyramida(int **&a, int b)
 {
-	b -= 1;
+	b--;
 
 	int c = b, d = 0, k = 1;
 	while (c >= d)
@@ -14,30 +14,28 @@ void pyramida(int **&a, int b)
 		while (x < c)
 		{
 			a[y][x] = k;
-			x += 1;
+			x++;
 		};
 
 		while (y < c)
 		{
 			a[y][x] = k;
-			y += 1;
+			y++;
 		};
 
 		while (x > d)
 		{
 			a[y][x] = k;
-			x -= 1;
+			x--;
 		};
 
 		while (y > d)
 		{
 			a[y][x] = k;
-			y -= 1;
+			y--;
 		};
 
-		d += 1;
-		c -= 1;
-		k += 1;
+		d++, c--, k++;
 	};
 
 	if ((b % 2) == 0)

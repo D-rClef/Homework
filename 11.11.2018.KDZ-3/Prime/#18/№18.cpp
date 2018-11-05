@@ -4,13 +4,13 @@ using namespace std;
 
 bool pal (char* A, int b)
 {
-    b -= 1;
+    b--;
     int k = 0;
     for (int i = 0; i <= ((b - 1)/2); i++)
     {
         if (A[i] != A[b - i])
         {
-            k += 1;
+            k++;
         };
     };
     return (k == 0);;

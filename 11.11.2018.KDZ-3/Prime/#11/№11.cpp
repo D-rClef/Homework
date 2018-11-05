@@ -35,7 +35,7 @@ int skolko (int* a, int b)
     {
         if (((*(a + i)) == (Max_a(a,b))) || ((*(a+i)) == (min_a(a,b))))
         {
-            m += 1;
+            m++;
         };
     };
     return m;
@@ -52,7 +52,7 @@ void oioi(int* &a, int b)
         if (((*(a + i)) != Max_a(a,b)) && ((*(a + i)) != min_a(a,b)))
         {
             *(plagiat + k) = *(a + i);
-            k += 1;
+            k++;
         };
     };
 

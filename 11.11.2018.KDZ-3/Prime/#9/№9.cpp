@@ -9,7 +9,7 @@ bool sign(double a)
 
 double f(double a)
 {
-	return (a * a * a - 3 * a + 7);
+	return (a * a * a);
 }
 
 int main()
