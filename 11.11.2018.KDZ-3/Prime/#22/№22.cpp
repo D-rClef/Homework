@@ -1,5 +1,7 @@
-#include <iostream>
+/* Для структуры Date напишите метод, определяющий, сколько дней осталось до
+Нового Года. */
 
+#include <iostream>
 using namespace std;
 
 struct Date
@@ -8,56 +10,82 @@ struct Date
     int Month;
     int Year;
 
-    void input();
-    void output();
-
-    int skolko_esho(Date a)
+    Date ()
     {
-        int p = 0;
-        while (a.Month <= 12)
-        {
-            if (a.Month == 2)
+        Day = 0;
+        Month = 0;
+        Year = 0;
+    }
+
+    void input()
+    {
+        cin >> Day >> Month >> Year;
+    }
+
+    void output()
+    {
+        if ((Day / 10) == 0) {cout << 0;};
+        cout << Day << ".";
+        if ((Month / 10) == 0) {cout << 0;};
+        cout << Month << "." << Year;
+    }
+
+    bool visokos()
+    {
+        if ((Year % 400) == 0) {return true;}
+        else
             {
-                if ((a.Year % 400) == 0) {p += 29;}
+                if ((Year % 100) == 0) {return false;}
                 else
                 {
-                    if ((a.Year % 100) == 0) {p += 28;}
-                    else
-                    {
-                        if ((a.Year % 4) == 0) {p += 29;}
-                    };
+                    if ((Year % 4) == 0) {return true;}
+                    else {return false;};
                 };
-            }
-            else
-            {
-                if (((a.Month <= 7) && (((a.Month % 2) != 0))) || ((a.Month >= 8) && ((a.Month % 2) == 0)))
-                {
-                    p += 31;
-                }
-                else {p += 30;};
             };
-            a.Month += 1;
+    }
+
+    int dni()
+    {
+        if (Month == 2)
+        {
+            if (visokos()) {return 29;}
+            else {return 28;};
+        }
+        else
+        {
+            if (((Month <= 7) && (((Month % 2) != 0))) || ((Month >= 8) && ((Month % 2) == 0)))
+            {
+                return 31;
+            }
+            else {return 30;};
+        };
+    }
+
+    int skolko_esho()
+    {
+        int p = 0;
+        while (Month < 12)
+        {
+            p += dni();
+            Month++;
+        };
+        while (Day <= 31)
+        {
+            p++;
+            Day++;
         };
 
-        p -= a.Day;
         return p;
     }
 };
 
-void Date::input ()
-{
-    cin >> Day >> Month >> Year;
-}
-
-void Date::output ()
-{
-    cout << Day << Month << Year;
-}
-
 int main()
 {
     Date Yo;
-    Yo.input;
-    Yo.output;
-    cout << skolko_esho (Yo);
+
+    Yo.input();
+    Yo.output();
+    cout << '\n';
+
+    cout << Yo.skolko_esho();
 }

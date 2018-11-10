@@ -1,5 +1,7 @@
-#include <iostream>
+/* Напишите логическую функцию, проверяющую, является строка палиндромом.
+Можно считать, что строка состоит только из букв латиницы. */
 
+#include <iostream>
 using namespace std;
 
 bool pal (char* A, int b)

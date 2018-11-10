@@ -1,5 +1,8 @@
-#include <iostream>
+/* Напишите программу, находящую корень функции f, если известно, что f –
+монотонна. Функцию f считаем не известной (т.е. она просто возвращает значение
+по аргументу). Для отладки разумно использовать кубическую функцию. */
 
+#include <iostream>
 using namespace std;
 
 bool sign(double a)
@@ -9,7 +12,7 @@ bool sign(double a)
 
 double f(double a)
 {
-	return (a * a * a);
+	return (a * a * a - 5 * a + 2);
 }
 
 int main()

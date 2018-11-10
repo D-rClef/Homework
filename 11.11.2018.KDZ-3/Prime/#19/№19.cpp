@@ -1,7 +1,9 @@
+/* Напишите логическую функцию, проверяющую, является ли одна строка
+анаграммой другой строки (т.е. может быть получена перестановкой букв). Можно
+считать, что строка состоит только из букв латиницы. */
+
 #include <iostream>
-
 using namespace std;
-
 
 int Length(char* a)
 {
@@ -17,7 +19,7 @@ bool anagr(char* a, int b, char* c, int d)
 {
     if (b != d)
     {
-        return (0 == 1);
+        return false;
     }
     else
     {
@@ -47,11 +49,11 @@ bool anagr(char* a, int b, char* c, int d)
             };
             if (u == 0)
             {
-                return (0 == 1);
+                return false;
                 break;
             };
         };
-        return (0 == 0);
+        return true;
     };
 
 }

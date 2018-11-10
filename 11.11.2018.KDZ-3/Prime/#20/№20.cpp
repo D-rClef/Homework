@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <cstdio>
 
 using namespace std;
 
@@ -44,25 +45,33 @@ int Length(char* a)
     return b;
 }
 
-
-void uhodi (char* &a, int b)
+ void uhodi (char* &a, int b)
 {
     int r = lysh_prob(a, b);
     int k = (b - r);
     char* plagiat = new char [k];
 
-    int i = 0;
-
-    for (int j = 0; j < b; j++)
+    int i = 0, j = 0;;
+    while (j < b)
     {
-        if (*(a + j) == ' ')
+        if (i == k) break;
+        if ((*(a + j)) != ' ')
         {
-            if (j == 0) continue;
-            if (j == (b - 1)) continue;
-            if (*(a + j + 1) == ' ') continue;
+            *(plagiat + i) = *(a + j);
+            i++;
+        }
+        else
+        {
+            if (j != 0)
+            {
+                if (*(a + j - 1) != ' ')
+                {
+                    *(plagiat + i) = *(a + j);
+                    i++;
+                };
+            };
         };
-        *(plagiat + i) == *(a + j);
-        i++;
+        j++;
     };
 
     a = plagiat;
@@ -70,29 +79,20 @@ void uhodi (char* &a, int b)
 
 int main()
 {
-    /*int n;
+    int n;
 
     char* probel_zalipaet = new char [256];
-    cin.getline(probel_zalipaet, 256, '\n');
+    gets(probel_zalipaet);
     n = Length(probel_zalipaet);
     int y = lysh_prob(probel_zalipaet, n);
 
     uhodi(probel_zalipaet, n);
 
-    n -= y;
-    for (int i = 0; i < n; i++)
+    int i = 0;
+    while (i < (n - y))
     {
-        if (*(probel_zalipaet + i) != ' ')
-        {
-            cout << *(probel_zalipaet + i);
-        }
-        else
-        {
-            cout << " ";
-        };
+        if (*(probel_zalipaet + i) != ' ') {cout << *(probel_zalipaet + i);};
+        if (*(probel_zalipaet + i) == ' ') {cout << " ";};
+        i++;
     };
-*/
-cout << "Haha" << '\n';
-cout << "Arrr";
-cout << '\v' << '\r' << "Lol";
 }

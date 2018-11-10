@@ -1,5 +1,6 @@
-#include <stdio.h>
+/* Напишите процедуру, заполняющую квадратный двумерный массив пирамидой. */
 
+#include <stdio.h>
 using namespace std;
 
 void pyramida(int **&a, int b)
@@ -54,12 +55,15 @@ int main()
 		*(easy + win) = new int[n];
 	};
 
+	int w = 2;
+	if ((n/2) >= 10) {w++;};
 	pyramida(easy, n);
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < n; j++)
 		{
-			printf("%3d", easy[i][j]);
+		    if (j == 0) {printf("%d", easy[i][j]);}
+			else {printf("%*d", w, easy[i][j]);};
 		};
 		printf("\n");
 	};

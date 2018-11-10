@@ -1,5 +1,8 @@
-#include <stdio.h>
+/* Напишите процедуру, заполняющую квадратный двумерный массив
+последовательными числами змейкой против часовой стрелки, начиная с верхнего
+правого угла. */
 
+#include <stdio.h>
 using namespace std;
 
 void prchas (int** &a, int b)
@@ -60,12 +63,14 @@ int main()
         w += 2;
     };
 
+    printf("\n");
 	prchas(uh, n);
 	for(int i = 0; i < n; i++)
 	{
 		for(int j = 0; j < n; j++)
 		{
-		    printf("%*d", w, uh[i][j]);
+		    if (j == 0) {printf("%1d", uh[i][j]);}
+		    else {printf("%*d", w, uh[i][j]);};
 		};
 		printf("\n");
 	};

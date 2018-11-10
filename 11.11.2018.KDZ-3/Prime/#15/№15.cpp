@@ -1,5 +1,9 @@
-#include <stdio.h>
+/* Напишите процедуру, заполняющую квадратный двумерный массив по
+диагоналям. На побочной диагонали должны стоять наибольшие значения, на
+соседних с ней - на единицу меньшие, и так далее - до угла, в котором должны
+стоять единицы. */
 
+#include <stdio.h>
 using namespace std;
 
 void diag (int** &a, int b)
@@ -55,12 +59,15 @@ int main()
 		*(stradanie+otchayanie) = new int [n];
 	};
 
+	int w = 2;
+	if ((n / 10) > 0) {w+=2;};
 	diag(stradanie, n);
 	for(int i = 0; i < n; i++)
 	{
 		for(int j = 0; j < n; j++)
 		{
-			printf("%3d", stradanie[i][j]);
+		    if (j == 0) {printf("%2d", stradanie[i][j]);}
+			else {printf("%*d", w, stradanie[i][j]);};
 		};
 		printf("\n");
 	};
