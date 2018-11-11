@@ -18,11 +18,8 @@ double f(double a)
 int main()
 {
 	double t, x = 0, c = 100, l = (x - c), r = (x + c);
-<<<<<<< HEAD
-	cin >> t; //ââîäèì òî÷íîñòü
-=======
 	cin >> t; //Ð²Ð²Ð¾Ð´Ð¸Ð¼ Ñ‚Ñ€ÐµÐ±ÑƒÐµÐ¼ÑƒÑŽ Ñ‚Ð¾Ñ‡Ð½Ð¾ÑÑ‚ÑŒ
->>>>>>> e9fd6911d798ef018bfd4911bbc8c2618e59d368
+
 
 	while (sign(f(l)) == sign(f(r)))
 	{
