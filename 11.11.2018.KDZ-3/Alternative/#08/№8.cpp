@@ -1,3 +1,8 @@
+/* Напишите две функции(или метода):
+- функция, заполняющую карту размера MxN минами с заданной вероятностью P.
+Картой можно считать двумерный массив. Миной можно считать значение “-1”
+- функцию заполняющую карту значениями – количеством мин в соседних точках. */
+
 #include <stdio.h>
 #include <cstdlib>
 using namespace std;
@@ -16,7 +21,6 @@ void mining (int** &a, int b, int c, int t)
         };
     };
 }
-
 
 void mins_detector (int** &a, int b, int c)
 {
@@ -47,7 +51,6 @@ void mins_detector (int** &a, int b, int c)
         };
     };
 }
-
 
 int main()
 {
