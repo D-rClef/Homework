@@ -1,3 +1,6 @@
+/* Напишите эффективную функцию, вычисляющую последнюю цифру числа, являющегося результатом возведения числа A в степень B. 
+Числа A и B помещаются в тип long long */
+
 #include <iostream>
 using namespace std;
 
@@ -7,8 +10,6 @@ long long last(long long x, long long y)
     long long m, a = x;
     long long P[5];
     P[0] = x;
-
-
 
     for(long long i = 1; i <= 5; i++)
     {
