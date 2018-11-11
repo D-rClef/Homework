@@ -1,3 +1,6 @@
+/* Напишите программу, определяющую количество нулей в числе N! 
+Известно, что N помещается в тип unsigned int. */
+
 #include <iostream>
 #include <cmath>
 using namespace std;
