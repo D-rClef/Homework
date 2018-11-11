@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 long long last(long long x, long long y)
@@ -43,9 +42,6 @@ long long last(long long x, long long y)
     };
 
 }
-
-
-
 
 int main()
 {

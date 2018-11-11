@@ -15,16 +15,17 @@ int Length(char* a)
 
 struct String
 {
-   char* symb;
+   char* symb = new char [256];
+   int n = Length(symb);
 
     void input ()
     {
         gets(symb);
+        n = Length(symb);
     }
 
     void output()
     {
-        int n = Length(symb);
         for (int i = 0; i < n; i++)
             cout << *(symb + i);
         cout << "\n";
@@ -32,43 +33,36 @@ struct String
 
     char & operator ()(int i)
     {
-        return *(symb+i);
+        return *(symb + i);
     }
 
     double chastota (char bukva)
     {
-        int n = Length(symb);
         double k = 0;
         for (int i = 0; i < n; i++)
         {
-            if (*(symb + i) == bukva) {k++;};
+            if ((*(symb + i)) == bukva) {k++;};
         };
         k = (k/n);
         k *= 100;
         return k;
-    }
-
-    int size_ (String &A)
-    {
-        return Length(A.symb);
     }
 };
 
 
 String & operator + (String &A, const String &B)
 {
-    int k = Length(A.symb);
-    k += Length(B.symb);
+    int k = A.n;
+    A.n += B.n;
+    char* plagiat = new char [A.n];
 
-    char* plagiat = new char [k];
-
-    for (int i = 0; i < Length(A.symb); i++)
+    for (int i = 0; i < k; i++)
     {
         *(plagiat + i) = *(A.symb + i);
     };
-    for (int i = Length(A.symb); i < k; i++)
+    for (int i = k; i < A.n; i++)
     {
-        *(plagiat + i) = *(B.symb + i - Length(A.symb));
+        *(plagiat + i) = *(B.symb + i - k);
     };
 
     A.symb = plagiat;
@@ -77,54 +71,55 @@ String & operator + (String &A, const String &B)
 
 bool searching (const String &A, const String &B)
 {
-    if (Length(A.symb) <= Length(B.symb))
+    if (A.n <= B.n)
     {
         int k = 0;
-        for (int i = 0; i < Length(B.symb); i++)
+        for (int i = 0; i < B.n; i++)
         {
             if ((*(A.symb)) == (*(B.symb + i)))
             {
                 k++;
                 int j = 1;
-                while (((*(A.symb + j)) == (*(B.symb + i + j))) && (j < Length(A.symb)))
+                while (((*(A.symb + j)) == (*(B.symb + i + j))) && (j < A.n))
                 {
                     k++, j++;
                 };
             };
-            if (k == Length(A.symb)) {break;}
+            if (k == A.n) {break;}
             else {k = 0;};
         };
-        return (k == Length(A.symb));
+        return (k == A.n);
     }
     else
     {
-        return (0 == 1);
+        return false;
     };
 }
 
 int main()
 {
     String s, l;
+    cout << "Enter first string: ";
     s.input();
+    cout << s.n;
+    cout << "Enter second string: ";
     l.input();
     cout << '\n';
-    s.output();
-    l.output();
-    cout << '\n';
-    //cout << s(0) << " " << l(m-1) << '\n' << '\n';
 
-    if (searching(s, l) == 1) {cout << "Yes" << '\n';}
-    else {cout << "No" << '\n';};
-
-    cout << '\n';
-    s + l;
-    s.output();
-
+    if (searching(s, l)) {cout << "Yes, the first string is in the second" << '\n';}
+    else {cout << "No, the first string isn't in the second" << '\n';};
     cout << '\n';
 
+    cout << "Enter the letter: ";
     char isk;
     cin >> isk;
 
-    cout << s.chastota(isk) << "%" << '\n';
-    cout<< l.chastota(isk);
+    cout << "Letter frequency in the first is " << s.chastota(isk) << " %" << '\n';
+    cout<< "Letter frequency in the first is " << l.chastota(isk) << " %" << '\n';
+    cout << '\n';
+
+    cout << "Concatenation result: ";
+    s + l;
+    s.output();
+    cout << '\n';
 }

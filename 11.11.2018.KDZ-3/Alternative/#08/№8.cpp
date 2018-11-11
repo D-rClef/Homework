@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <cstdlib>
-
 using namespace std;
 
 void mining (int** &a, int b, int c, int t)

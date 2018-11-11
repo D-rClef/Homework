@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <cstdlib>
 #include <conio.h>
-
 using namespace std;
 
 void set_min (int** &a, int b, int c, int x, int y)
@@ -11,7 +10,6 @@ void set_min (int** &a, int b, int c, int x, int y)
         a[x - 1][y - 1] = -1;
     };
 }
-
 
 void mins_detector (int** &a, int b, int c)
 {
@@ -105,7 +103,7 @@ int main()
             };
             printf("\n");
         };
-        d = getch();
+        d = getch();               //
         if (d == 27) {exit(0);};
     };
 

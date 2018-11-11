@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-
 using namespace std;
 
 long long fact(unsigned int N)

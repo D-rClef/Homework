@@ -248,12 +248,12 @@ int main()
 
     cout << "День недели: ";
     if (D.den_ned() == 1) {cout << "Воскресенье";};
-    if (D.den_ned() == 2) {cout << "Суббота";};
-    if (D.den_ned() == 3) {cout << "Пятница";};
-    if (D.den_ned() == 4) {cout << "Четверг";};
-    if (D.den_ned() == 5) {cout << "Среда";};
-    if (D.den_ned() == 6) {cout << "Вторник";};
-    if ((D.den_ned() == 0) || (D.den_ned() == 7)) {cout << "Понедеьник";};
+    if (D.den_ned() == 2) {cout << "Понедельник";};
+    if (D.den_ned() == 3) {cout << "Вторник";};
+    if (D.den_ned() == 4) {cout << "Среда";};
+    if (D.den_ned() == 5) {cout << "Четверг";};
+    if (D.den_ned() == 6) {cout << "Пятница";};
+    if ((D.den_ned() == 0) || (D.den_ned() == 7)) {cout << "Суббота";};
     cout << '\n';
 
     cout << "А новый год через " << D.skolko_esho() << " день (я/ей)" << '\n';

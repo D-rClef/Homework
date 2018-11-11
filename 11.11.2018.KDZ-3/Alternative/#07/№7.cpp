@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <cmath>
-
 using namespace std;
 
 int prost(int l)
@@ -29,7 +28,6 @@ int prost(int l)
         return 1;
     };
 }
-
 
 void NTI(int** &a, int b, int c)
 {
@@ -123,9 +121,6 @@ void NTI(int** &a, int b, int c)
         a [(b - 1)/2] [(c - 1)/2] = sost[q - 2];
     };
 }
-
-
-
 
 int main()
 {
