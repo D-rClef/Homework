@@ -187,6 +187,49 @@ struct Date
         };
         return *this;
     }
+
+    Date palindrom ()
+    {
+       int* kar = new int [8];
+       int k = 0;
+
+       while (k == 0)
+       {
+           int m = 0;
+           kar[0] = (Day / 10);
+           kar[1] = (Day % 10);
+           kar[2] = (Month / 10);
+           kar[3] = (Month % 10);
+           kar[4] = (Year / 1000);
+           kar[5] = ((Year / 100) % 10);
+           kar[6] = ((Year / 10) % 10);
+           kar[7] = (Year % 10);
+
+           for (int i = 0; i <= 3; i++)
+           {
+               if (kar[i] != kar[7 - i]) break;
+                m++;
+           };
+
+           if (m == 4) {break;}
+           else
+           {
+               Day++;
+               if (Day > dni())
+               {
+                   Day -= dni();
+                   Month++;
+               };
+               if (Month > 12)
+               {
+                   Month -= 12;
+                   Year++;
+               };
+           };
+       };
+
+       return *this;
+    }
 };
 
 int main()
@@ -221,4 +264,8 @@ int main()
     cout << "Вы попали в ";
     D.output();
     cout << '\n';
+
+    cout << "Кстати, ближайшая к этому дню дата-палиндром: ";
+    D.palindrom();
+    D.output();
 }
