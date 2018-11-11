@@ -48,7 +48,7 @@ void mins_detector (int** &a, int b, int c)
 
 void output (int** a, int b, int c)
 {
-    system("cls"); //очистка для удобства
+    system("cls"); //для удобства
 
    for (int i = 0; i < b; i++)
     {
