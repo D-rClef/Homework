@@ -12,13 +12,13 @@ bool sign(double a)
 
 double f(double a)
 {
-	return (a * a * a - 5 * a + 2);
+	return (a * a * a + 2);
 }
 
 int main()
 {
 	double t, x = 0, c = 100, l = (x - c), r = (x + c);
-	cin >> t;
+	cin >> t; //вводим точность
 
 	while (sign(f(l)) == sign(f(r)))
 	{
