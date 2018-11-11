@@ -5,6 +5,7 @@
 подряд. */
 
 #include <iostream>
+#include <cstdio>
 using namespace std;
 
 int variable (char* a, int b)
@@ -59,13 +60,11 @@ void zip (char* &a, int b)
 
 int main()
 {
-   int n;
+   char* shifr;
+   gets(shifr);
+   int n = Length(shifr);
 
-   char* shifr = new char [256];
-   cin.getline(shifr, 256, '\n');
-   n = Length(shifr);
-
-   int f = variable(shifr,n);
+   int f = variable(shifr, n);
    f += f;
    zip(shifr, n);
 

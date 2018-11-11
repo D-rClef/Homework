@@ -41,6 +41,27 @@ void mins_detector (int** &a, int b, int c)
     };
 }
 
+void output (int** a, int b, int c)
+{
+    system("cls");
+
+   for (int i = 0; i < b; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            if (j == 0)
+            {
+                printf("%2d", a[i][j]);
+            }
+            else
+            {
+                printf("%3d", a[i][j]);
+            };
+        };
+        printf("\n");
+    };
+}
+
 int main()
 {
     int m, n;
@@ -60,21 +81,7 @@ int main()
         };
     };
 
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            if (j == 0)
-            {
-                printf("%2d", pole[i][j]);
-            }
-            else
-            {
-                printf("%4d", pole[i][j]);
-            };
-        };
-        printf("\n");
-    };
+    output(pole, m, n);
 
     printf("\n");
 
@@ -84,26 +91,12 @@ int main()
     {
         int m_, n_;
         scanf ("%d%d", &m_, &n_);
+
         set_min(pole, m, n, m_, n_);
         mins_detector(pole, m, n);
+        output(pole, m, n);
 
-        system("cls");
-        for (int i = 0; i < m; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                if (j == 0)
-                {
-                    printf("%2d", pole[i][j]);
-                }
-                else
-                {
-                    printf("%4d", pole[i][j]);
-                };
-            };
-            printf("\n");
-        };
-        d = getch();               //
+        d = getch();
         if (d == 27) {exit(0);};
     };
 
