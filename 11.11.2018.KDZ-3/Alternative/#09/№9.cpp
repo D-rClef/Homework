@@ -48,7 +48,7 @@ void mins_detector (int** &a, int b, int c)
 
 void output (int** a, int b, int c)
 {
-    system("cls");
+    system("cls"); //для удобства
 
    for (int i = 0; i < b; i++)
     {
@@ -102,7 +102,7 @@ int main()
         output(pole, m, n);
 
         d = getch();
-        if (d == 27) {exit(0);};
+        if (d == 27) {exit(0);};       // Важно: выход из "бесконечного" заполнения через esc
     };
 
 }
