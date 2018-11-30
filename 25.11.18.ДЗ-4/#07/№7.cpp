@@ -10,10 +10,11 @@ int quant (int* a, int b, int c)
         int dva = 0, kar = a[i];
         while (kar > 1)
         {
-            if ((kar % 3) == 2) {vse_dva++; dva++;};
+            if ((kar % 3) == 2) {dva++;};
             kar /= 3;
         };
         if (dva < c) {cout << a[i] << " ";};
+        vse_dva += dva;
     };
     cout << '\n';
     return vse_dva;
