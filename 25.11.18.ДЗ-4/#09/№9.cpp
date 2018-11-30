@@ -9,13 +9,13 @@ int main()
     int n;
     cin >> n;
 
-    bool* Asmodei = new bool [n + 1];
+    bool* Asmodei = new bool [2*n + 2];
     Asmodei[0] = Asmodei[1] = 0;
 
     for (int i = 2; i <= (2*n + 1); i++)
     {
         Asmodei[i] = 1;
-        for(int i = 2; i <= 2*n + 1; i++)
+        for(int i = 2; i <= (2*n + 1); i++)
         {
             if (Asmodei[i])
             {
