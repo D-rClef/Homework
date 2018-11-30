@@ -1,5 +1,8 @@
+/* Напишите функцию вычисляющую праймориал числа. Программа должна работать не более чем за O(n*log log n) шагов. */
+
 #include <iostream>
 using namespace std;
+
 int prime(bool *a, int b)
 {
     int p = 1;
