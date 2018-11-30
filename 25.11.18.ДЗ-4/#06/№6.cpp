@@ -11,10 +11,10 @@ int main()
 	bool *Beelzebub = new bool[n + 3];
 	int *Mefisto = new int[n + 3];
 	for (int i = 2; i <= (n+2); i++)
-    {
-        Beelzebub[i] = 1;
-        Mefisto[i] = 0;
-    };
+        {
+           Beelzebub[i] = 1;
+           Mefisto[i] = 0;
+        };
 
 	for (int i = 2; i <= (n + 2); i++)
 	{
@@ -25,11 +25,11 @@ int main()
 				Beelzebub[j] = 0;
 				int bes = j;
 				while ((bes % i) == 0)
-                {
-                    Mefisto[j]++;
-                    bes /= i;
-                    if (Mefisto[j] > 2) break;
-                };
+                                {
+                                    Mefisto[j]++;
+                                    bes /= i;
+                                    if (Mefisto[j] > 2) break;
+                                };
 			};
 		};
 	};
