@@ -1,5 +1,7 @@
-#include <iostream>
+/* Напишите переборную программу программу, вычисляющую значение функции Эйлера для числа n. 
+Программа должна работать не более чем за O(n* log n) шагов. */
 
+#include <iostream>
 using namespace std;
 
 int GCD(int x, int y)
