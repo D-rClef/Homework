@@ -1,5 +1,7 @@
-#include <iostream>
+/* Напишите программу находящую первые n составных чисел.
+Программа должна работать не более чем за O(n*log log n) шагов. */
 
+#include <iostream>
 using namespace std;
 
 int main()
